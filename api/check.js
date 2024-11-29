@@ -3,7 +3,7 @@ const playintegrity = google.playintegrity('v1');
 
 
 const packageName = process.env.PACKAGE_NAME
-const privatekey = JSON.parse(JSON.stringify(process.env.GOOGLE_APPLICATION_CREDENTIALS))
+const privatekey = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS)
 
 
 async function getTokenResponse(token) {
