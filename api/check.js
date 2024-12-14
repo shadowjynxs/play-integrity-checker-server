@@ -37,19 +37,19 @@ module.exports = async (req, res) => {
 
     console.log(token)
 
-    // if (token == 'none') {
-    //     res.status(400).send({ 'error': 'No token provided' })
-    //     return
-    // }
+    if (token == 'none') {
+        res.status(400).send({ 'error': 'No token provided' })
+        return
+    }
 
-    // getTokenResponse(token)
-    //     .then(data => {
-    //         res.status(200).send(data)
-    //         return
-    //     })
-    //     .catch(e => {
-    //         console.log(e)
-    //         res.status(200).send({ 'error': 'Google API error.\n' + e.message })
-    //         return
-    //     });
+    getTokenResponse(token)
+        .then(data => {
+            res.status(200).send(data)
+            return
+        })
+        .catch(e => {
+            console.log(e)
+            res.status(200).send({ 'error': 'Google API error.\n' + e.message })
+            return
+        });
 }
