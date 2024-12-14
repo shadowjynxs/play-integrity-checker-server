@@ -35,6 +35,8 @@ module.exports = async (req, res) => {
 
     const { token = 'none' } = req.query
 
+    console.log(token)
+
     if (token == 'none') {
         res.status(400).send({ 'error': 'No token provided' })
         return
